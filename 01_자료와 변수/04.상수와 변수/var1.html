@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var num = 1
+         num = 3
+         console.log(num)
+         var num = 2
+         console.log(num)
+         //var은 변수를 정의할 때마다 계속 바뀜
+
+         let num2 = 2
+         num2 = 3
+         console.log(num2)
+
+         //  let num2 = 4
+         /*
+         Uncaught SyntaxError: Identifier 'num2' has already been declared
+         
+         let은 같은 변수명으로 정의가 불가능 (값을 재할당하는 건 가능)
+         */
+
+         const num3 = 3
+         num3 = 3 // 상수는 값 재할당 불가능
+         /*
+         var1.html:28 Uncaught TypeError: Assignment to constant variable.
+         */
+      </script>
+   </body>
+</html>

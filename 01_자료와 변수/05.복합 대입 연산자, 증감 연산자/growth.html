@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let num1 = 10
+         let num2 = 20
+         let result
+
+         --num1 // num1--로 써도 같은 결과
+         console.log('num1:', num1)
+         ++num1 // num1++로 써도 같은 결과
+         console.log('num1:', num1)
+         console.log('-----툐-----')
+
+         //후위연산자
+         result = num2++ // 20(num2) + 1
+         console.log('result:', result) // 결과 : 20
+         console.log('num2:', num2) // 결과 : 21
+
+         //전위연산자
+         result = ++num2 // 1 + 20(num2)
+         console.log('result:', result) // 결과 : 22
+         console.log('num2:', num2) // 결과 : 22
+      </script>
+   </body>
+</html>

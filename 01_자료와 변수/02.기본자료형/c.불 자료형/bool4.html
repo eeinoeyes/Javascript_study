@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         console.log(10 <= 12 && 5 < 8)
+         console.log(10 <= 12 && 5 > 8)
+         console.log(10 > 12 && 5 < 8)
+         console.log(10 > 12 && 5 > 8)
+         console.log('-----툐-----')
+         console.log(10 <= 12 || 5 < 8)
+         console.log(10 <= 12 || 5 > 8)
+         console.log(10 > 12 || 5 < 8)
+         console.log(10 > 12 || 5 > 8)
+         console.log('-----툐-----')
+         /*
+         비교연산자 우선순위
+         &&가 ||보다 우선순위가 높다(&&를 먼저 연산)
+         */
+         console.log(10 <= 12 || (5 < 8 && 10 < 1))
+         console.log((10 <= 12 || 5 < 8) && 10 < 1)
+         console.log(10 <= 12 || (5 < 8 && 10 < 1))
+      </script>
+   </body>
+</html>

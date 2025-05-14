@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let list = ''
+
+         list += '<ul>'
+         list += '  <li>Hello</li>'
+         list += '  <li>JavaScript</li>'
+         list += '  <li>Python</li>'
+         list += '</ul>'
+
+         console.log(list)
+         document.write(list)
+         // 오 좋은데??
+         //백틱 쓰면 더 쉽다고한다!
+
+         let list2 = `
+         <ul>
+            <li>Hello</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+        </ul>`
+         console.log(list2)
+         document.write(list2)
+      </script>
+   </body>
+</html>

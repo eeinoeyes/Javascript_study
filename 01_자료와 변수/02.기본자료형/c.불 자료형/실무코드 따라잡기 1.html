@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var ticket = prompt('예매 수량을 입력해 주세요.')
+         /*        var now = new Date() // 날짜 구하고
+         var time = now.getHours() // now에서 시간만 구하기1
+         console.log(time) */
+         var time = 16
+         console.log(typeof ticket)
+         console.log(typeof Number(ticket))
+         if (Number(ticket) == 1 && time >= 15 && time <= 23) {
+            document.write('예매가 완료되었습니다.')
+         }
+      </script>
+   </body>
+</html>

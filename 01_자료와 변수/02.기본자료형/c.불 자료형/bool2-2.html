@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var name = prompt('당신의 이름은?') // 사용자로부터 입력받는 창
+         //컴퓨터는 prompt의 입력값을 무조건 문자형으로 받아들임
+
+         /* prompt('당신의 이름은?', '한형준')
+         이렇게 콤마, 를 써서 초기값을 줄 수도 있음(placeholder처럼 뜬다) */
+
+         console.log(name) // 입력받은 값이 콘솔창에 뜸
+
+         if (name) {
+            document.write('내 이름은 ' + name)
+         }
+      </script>
+   </body>
+</html>
