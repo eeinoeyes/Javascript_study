@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //시험점수(0~100)에 따른 학점 구하기
+         /*
+        90-100 : A
+        80 - 89 : B
+        70 - 79 : C
+        60 - 69 : D
+        60 미만 : F
+        */
+
+         const score = Number(prompt('점수를 입력하세요'))
+         if (score > 100 || score < 0) {
+            alert('잘못된 점수입니다. 0~100점 사이의 점수를 입력하세요')
+            location.reload()
+         } else {
+            if (score >= 90) {
+               alert('A')
+            } else if (score >= 80) {
+               alert('B')
+            } else if (score >= 70) {
+               alert('C')
+            } else if (score >= 60) {
+               alert('D')
+            } else {
+               alert('F')
+            }
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const date = new Date() // 날짜 (타임스탬프까지)
+         const hours = date.getHours() // 위에서 따온 날짜에서 시간만 추출
+
+         console.log(date)
+         console.log(hours)
+
+         if (hours < 12) {
+            alert('오전입니다')
+         } else {
+            alert('오후입니다')
+         }
+      </script>
+   </body>
+</html>
