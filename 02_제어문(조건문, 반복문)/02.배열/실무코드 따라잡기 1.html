@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const students = ['김영수', '이지혜', '류상진', '박미나', '서한울']
+
+         //배열에서 특정 인덱스 데이터 값 제거하기(류상진)
+         //  students.splice(2, 1)
+         //  console.log(students)
+
+         //인덱스번호 찾기 (np.where느낌?)
+         //변수.indexOf(요소)
+         const index = students.indexOf('류상진')
+         console.log(index) //출력값: 2
+         //배열 내에 없는 값을 찾으려고 하면 결과값이 -1로 나옴
+
+         if (index == -1) {
+            alert('해당 학생이 존재하지 않습니다.')
+         }
+      </script>
+   </body>
+</html>

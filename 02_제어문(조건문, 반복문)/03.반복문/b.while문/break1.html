@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         for (let i = 0; true; i++) {
+            alert(`${i}번째 반복입니다`)
+
+            const isCountinue = confirm('계속하시겠습니까?')
+            if (!isCountinue) {
+               //!는 결과값을 반대로 만들어주는 명령어
+               break
+               //break문을 만나면 아래의 코드는 실행하지 않고 반복문을 빠져나옴
+            }
+            alert('break문 아래')
+         }
+         alert('프로그램 종료')
+      </script>
+   </body>
+</html>
