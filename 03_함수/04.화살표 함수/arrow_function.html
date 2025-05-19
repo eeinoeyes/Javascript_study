@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function myFunc(a, b) {
+            return a + b
+         }
+         console.log(myFunc(1, 2))
+
+         const myFunc2 = (a, b) => {
+            return a + b
+         }
+         console.log(myFunc2(1, 2))
+         /*
+         const myFunc3 = (a, b) => {
+            console.log('합:', a + b)
+        }
+         화살표함수에서는 실행코드가 한 줄일 때 중괄호를 생략할 수 있다! 
+         return값이 하나일 때도 return 생략이 가능
+         */
+         //이렇게 ↓
+         const myFunc3 = (a, b) => console.log('합:', a + b)
+         myFunc3(1, 2)
+
+         const obj = { a: 'one', b: 'two', c: 'two' } //JSON객체 : python 딕셔너리 같은 거
+
+         const myFunc5 = () => {
+            return obj
+         }
+         console.log(myFunc5())
+         /* 
+         얘도 중괄호, return 생략해서 한줄로 쓰기 가능
+         const myFunc5 = () => obj
+         */
+         /* 
+         const myFunc5 = () => {
+         return ({ a: 'one', b: 'two', c: 'two' })
+        }
+         이렇게 바로 쓰려면 JSON객체를 튜플로 한번 묶어줘야됨
+         */
+      </script>
+   </body>
+</html>

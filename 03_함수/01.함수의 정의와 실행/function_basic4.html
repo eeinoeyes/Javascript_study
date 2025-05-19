@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function printNumber(num) {
+            if (num === 2) {
+               return
+            }
+            console.log(`매개변수로 받은 숫자는 ${num}`)
+         }
+         printNumber(1)
+         printNumber(2)
+         printNumber(3)
+         /*
+         결과: 2 생략하고 1, 3만 출력
+         break와 비슷하게 기능하게 만들 수 있음
+         */
+      </script>
+   </body>
+</html>

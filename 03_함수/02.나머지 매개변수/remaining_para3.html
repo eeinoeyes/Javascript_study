@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function sample(a, b, ...c) {
+            //일반매개변수와 가변매개변수를 함께 쓸 때의 출력 확인
+            console.log(a, b, c)
+         }
+         sample(1, 2)
+         sample(1, 2, 3) //결과: 1 2 [3]
+         sample(1, 2, 3, 4) //결과: 1 2 [3, 4]
+         //혼용시 일반매개변수는 개별 값, 가변매개변수는 배열로 출력됨
+      </script>
+   </body>
+</html>

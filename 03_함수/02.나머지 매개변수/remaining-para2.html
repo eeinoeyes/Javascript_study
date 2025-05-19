@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function min(...items) {
+            let itemX = items[0]
+            for (const itemY of items) {
+               if (itemX > itemY) {
+                  itemX = itemY
+               }
+            }
+            return itemX
+         }
+         console.log(`최소값:${min(52, 273, 32, 103, 275, 24, 57)}`)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var num = 100
+
+         ;(function () {
+            //라이언 개발자
+            function menu() {
+               num += 100
+               alert(num)
+            }
+
+            menu()
+         })()
+         ;(function () {
+            //어피치 개발자
+            function menu() {
+               alert(num)
+            }
+         })
+         /*
+            라이언과 어피치가 사용한 함수가 같은 이름이어서 덮어씌워짐(함수명 충돌)
+            코드를 위에서 아래로 읽으므로 어피치의 함수 결과값만 남게 됨
+
+            이런 경우를 방지하기 위해 즉시실행함수를 사용
+            */
+      </script>
+   </body>
+</html>

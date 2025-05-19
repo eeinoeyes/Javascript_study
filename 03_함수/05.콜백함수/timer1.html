@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // setTimeout ( function ( ) { } )
+         setTimeout(() => {
+            console.log('1초 뒤 실행')
+         }, 1000) // 1000 = 1초(밀리세컨드)
+         /* 
+         -> 지정한 시간에 함수를 실행하겠다
+         여기서는 1초 뒤에 실행하도록 지정
+         */
+
+         let count = 0
+         setInterval(() => {
+            console.log(`1초마다 실행: ${count}번째`)
+            count++
+         }, 1000)
+      </script>
+   </body>
+</html>

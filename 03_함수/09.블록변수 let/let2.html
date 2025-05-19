@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function logScope() {
+            let local = 2
+            if (local) {
+               let local = '다른 값'
+               console.log('블럭 안의 let:', local) // 출력: 다른 값
+            }
+            console.log('local: ', local) // 출력: 2
+            // let 사용시 값이 덮어씌워지지 않음
+         }
+         logScope()
+
+         /* 
+         let : 블럭 스코프, 블럭마다 다 다른 공간으로 인식
+         if문 안의 local과 바깥의 local은 다른 공간에 존재하므로 값도 다름!!
+         */
+      </script>
+   </body>
+</html>

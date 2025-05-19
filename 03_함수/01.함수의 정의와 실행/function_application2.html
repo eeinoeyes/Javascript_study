@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //배열 안 숫자 중 최소값 구하는 함수 만들기 ( * 코딩테스트 기초문제 ! )
+         /* function min(array) {
+            min=0
+            for i in range(len(array):
+                for j in range(len(array)):
+                    if array[i] < array[j]:
+                        min=i
+                    else: continue 
+         }  
+            이런 느낌인 것 같은데... */
+         function test(array) {
+            for (let i = 0; i <= array.length; i++) {
+               for (let j = 0; j <= array.length; j++) {
+                  minX = 0
+                  if (array[j] < array[i]) {
+                     minX = array[j]
+                     return minX
+                  }
+               }
+            }
+         }
+         const testArray = [52, 273, 32, 103, 275, 24, 57]
+         console.log(test(testArray))
+         // 결과: 32 왜 24가 안 나오지??? 거기까지 안 닿나봄
+
+         //답안
+         function min(array) {
+            let output = array[0] //배열의 0번째를 시작값으로 지정
+            for (const item of array) {
+               //array배열 내 값을 순회하는 변수 지정
+               if (output > item) {
+                  /*
+                첫번째 반복문에서 배열 0번째와 item을 비교해서 
+                item에 output보다 작은 값이 들어가면(조건이 참이 되면)*/
+                  output = item //output값에 item을 저장
+                  // 괜찮아 접근은 비슷했어 !!
+               }
+            }
+            return output
+         }
+      </script>
+   </body>
+</html>

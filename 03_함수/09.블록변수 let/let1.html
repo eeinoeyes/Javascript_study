@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function logScope() {
+            var local = 2
+            if (local) {
+               var local = '다른 값'
+               console.log('블럭 안의 var:', local) // 출력: 다른 값
+            }
+            console.log('local: ', local) // 출력: 다른 값
+            // var을 사용하면 if문 블럭에서 값이 덮어씌워짐
+         }
+         logScope()
+
+         // var = 함수 스코프 (함수 안의 지역변수는 블럭을 구분 x 다 같은 걸로 취급됨)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const depts = ['개발부', '개발부', '연구부', '개발부', '인사부', '회계부', '마케팅부']
+         let i = 0
+         // 배열의 '개발부'값에 1, 2, 3 텍스트 추가하기
+
+         let value = depts.map((dept) => {
+            if (dept.indexOf('개발부') !== -1) {
+               i++
+               return dept + i
+            } else {
+               return dept
+            }
+         })
+         console.log(value)
+      </script>
+   </body>
+</html>

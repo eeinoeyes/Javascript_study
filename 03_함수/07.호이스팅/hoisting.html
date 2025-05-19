@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         a()
+
+         function a() {
+            document.write('haha')
+         }
+         /*
+         함수 실행 시 호이스팅 가능
+         최상단으로 끌어올려짐
+         컴퓨터가 함수가 정의된 코드를 읽기 전에도 사용할 수 있음 
+         */
+
+         b()
+         const b = function () {
+            document.write('baba')
+         }
+         /*
+         함수 실행 시 호이스팅 X
+         함수가 선언된 코드를 지나기 전까진 함수를 사용할 수 없음
+         : 정의되지 않은 것으로 인식
+         */
+      </script>
+   </body>
+</html>
