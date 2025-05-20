@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 클래스는 아직 객체는 아님 (설계도 같은 개념)
+         // 이름은 무조건 대문자로 시작
+         class Car {
+            constructor(color, seater) {
+               // constructor가 생성자 역할
+               // constructor에 필요한 파라미터 지정하고
+               this.color = color
+               this.seater = seater
+            }
+            //기능 선언
+            run(status) {
+               if (status) {
+                  return '자동차가 달립니다.'
+               }
+            }
+            stop(status) {
+               if (status) {
+                  return '자동차가 멈춥니다.'
+               }
+            }
+         }
+
+         // Car객체 생성
+         const myCar1 = new Car('블랙', 4)
+         const myCar2 = new Car('화이트', 6) //해당 클래스의 파라미터를 지정해서 객체 생성
+         // 객체 사용
+         console.log(`${myCar1.color} 색상의 ${myCar1.seater}인승 자동차`)
+         console.log(`${myCar2.color} 색상의 ${myCar2.seater}인승 자동차`)
+         console.log(myCar1.run(true))
+         console.log(myCar1.stop(true))
+         console.log(myCar2.run(true))
+         console.log(myCar2.stop(true))
+      </script>
+   </body>
+</html>

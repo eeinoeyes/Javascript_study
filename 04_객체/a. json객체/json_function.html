@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const iPhone15 = {
+            model: 'iPhone 15',
+            manufacturer: 'Apple',
+            releaseYear: 2023,
+            colors: ['Black', 'Blue', 'Pink', 'Yellow', 'Green'],
+         }
+
+         document.write(iPhone15) //출력: [object Object]
+         document.write('<hr/>')
+
+         /*
+         JSON객체는 콘솔에서는 정상출력되지만 도큐먼트로는 object로 출력됨
+         -> 문자열로 바꿔주고 출력해야 한다
+         */
+
+         const jsonToString = JSON.stringify(iPhone15)
+         document.write(jsonToString)
+
+         const jsonToString2 = JSON.stringify(iPhone15, null, 2) // 정렬해서 출력(콘솔로그에만 해당)
+         console.log(jsonToString2)
+
+         document.write('<hr/>')
+
+         // 반대로 문자열을 JSON객체로 바꾸려면?
+         const iPhone15_2 = '{"model":"iPhone 15","manufacturer":"Apple","releaseYear":2023,"colors":["Black","Blue","Pink","Yellow","Green"]}'
+
+         const stringToJson = JSON.parse(iPhone15_2)
+         document.write(stringToJson)
+         console.log(stringToJson)
+      </script>
+   </body>
+</html>

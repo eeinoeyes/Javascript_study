@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let dog = {
+            name: '흰둥이',
+            owner: '신짱구',
+            age: 1,
+            family: ['신짱구', '신짱아', '봉미선', '신형만'],
+            walk: function () {
+               console.log(this.name + '는 산책 중입니다.')
+            },
+         }
+         console.log(dog.name)
+         // =
+         console.log(dog['name'])
+         // =
+         const test = 'name'
+         console.log(dog[test])
+         console.log('=====================')
+         console.log(dog.age)
+         console.log(dog['age'])
+         const age = 'age'
+         console.log(dog[age])
+         console.log('=====================')
+         //객체 내부의 배열 속성 값 읽기
+
+         console.log(dog.family)
+         console.log(dog.family[0])
+         console.log(dog.family[1])
+         console.log(dog.family[2])
+         console.log(dog.family[3])
+         console.log('=====================')
+
+         console.log(dog['family'][0]) // 파이썬 데이터프레임 호출이랑 똑 같 다 !
+         console.log('=====================')
+
+         dog.walk() // 얘는 되는데
+         dog['walk'] // 얘는 안 됨 (함수 자체를 지칭하는 거라서)
+         dog['walk']() //이렇게 하면 됨!! (괄호가 붙어야만 함수를 동작시키는 거라서)
+      </script>
+   </body>
+</html>
