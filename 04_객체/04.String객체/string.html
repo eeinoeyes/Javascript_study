@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var t = 'Hello Thank you good luck to you'
+
+         for (i in t) {
+            document.write(`(${t[i]} : ${i})`)
+         }
+
+         document.write('<hr/>')
+
+         document.write(t.indexOf('you'), '<br/>')
+         //문자열의 처음부터 해당 문자의 인덱스 번호를 찾음
+         document.write(t.indexOf('you', 16), '<br/>')
+         //지정한 인덱스번호 위치부터 해당 문자의 인덱스 번호를 찾음
+
+         document.write('<hr/>')
+
+         document.write(t.search('you'), '<br/>')
+         // 문자열.search('찾을 값'): 문자열 안에서 해당하는 문자의 위치를 탐색, 첫 글자의 인덱스번호 반환 (없으면 -1 반환)
+         document.write(t.substring(6, 12), '<br/>')
+         // 문자열.substring(x, y): 문자열 슬라이싱. x번부터 y 전(y-1)까지의 값을 반환
+
+         document.write('<hr/>')
+
+         document.write(t.replace('you', 'me'), '<br/>')
+         /*
+         문자열.replace(기존 값, 바꿀 값): python의 replace와 비슷함
+        문자열 내의 모든 you를 변경하는 게 아니라 전방탐색 후 > 가장 처음 발견한 you만 바꿔줌! (중요)
+         모든 값을 바꾸려면 정규표현식 사용해야 함
+         document.write(t.replace(/you/g, 'me'), '<br/>') -> /you/g 이게 정규식
+         */
+         document.write(t.length)
+
+         document.write('<hr/>')
+
+         var s = t.split('')
+         console.log(s) //python의 split과 똑같은 기능. 지정한 문자를 기준으로 텍스트를 분할해 배열로 반환
+      </script>
+   </body>
+</html>
