@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1 class="title" id="title">HEADER</h1>
+
+      <script>
+         const header = document.querySelector('.title')
+         /*
+         Java Script로 스타일 부여하기
+         기본 구조: 변수.style.css속성 = '값' 
+         이때 css 속성은 문자열/숫자열, 카멜표기법으로 작성
+         */
+         header.style.color = 'white'
+         header.style.backgroundColor = 'black' // 표기법 주의! CSS랑 다름
+         header.style.padding = '10px'
+      </script>
+   </body>
+</html>
