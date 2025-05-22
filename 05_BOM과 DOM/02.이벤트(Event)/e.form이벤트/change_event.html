@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <select>
+         <option value="fool1">떡볶이</option>
+         <option value="fool2">순대</option>
+         <option value="fool3">오뎅</option>
+         <option value="fool4">튀김</option>
+      </select>
+      <p>선택 :</p>
+      <script>
+         const select = document.querySelector('select')
+         const p = document.querySelector('p')
+
+         // change = radio, select, checkbox에서 사용 (선택하면 바뀐다)
+         select.addEventListener('change', (e) => {
+            const options = e.currentTarget.options
+            const index = e.currentTarget.options.selectedIndex
+            console.log(index)
+            p.textContent = `선택: ${options[index].textContent}`
+            //요소.textContent : 요소가 가진 텍스트값 반환
+
+            const selectedFood1 = e.currentTarget.value //option의 value값 불러오기
+            // const selectedFood1 = e.current.value 이렇게 써도 됨
+            console.log(selectedFood1)
+         })
+      </script>
+   </body>
+</html>

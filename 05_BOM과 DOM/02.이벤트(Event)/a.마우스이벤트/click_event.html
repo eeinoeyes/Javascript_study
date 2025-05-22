@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+         h1 {
+            user-select: none;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>클릭 횟수: 0</h1>
+      <script>
+         let counter = 0
+
+         const h1 = document.querySelector('h1')
+         //객체를 먼저 가져온 후
+
+         h1.addEventListener('click', () => {
+            counter++
+            h1.textContent = `클릭 횟수: ${counter}`
+         })
+         //클릭 이벤트 함수 적용
+         /*
+        구조:h1.addEventListener('click', ()=>{}) 
+        파라미터: ('이벤트 이름', 콜백 함수)
+        */
+      </script>
+   </body>
+</html>
