@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>location</title>
+   </head>
+   <body>
+      <button onclick="move()">이동</button>
+
+      <script>
+         var local = location.href
+         console.log(local)
+
+         // location객체는 주소 이동에 자주 쓰임
+
+         function move() {
+            location.href = './history.html'
+         }
+
+         var sWidth = screen.width
+         var sHeight = screen.height
+
+         var iWidth = window.innerWidth
+         var iHeight = window.innerHeight
+         console.log(`디스플레이 해상도: width=${sWidth}px, height=${sHeight}`)
+         console.log(`뷰포트 크기:width=${iWidth}px, height=${iHeight}`)
+
+         var naviInfo = navigator.userAgent
+         console.log(naviInfo)
+      </script>
+   </body>
+</html>
