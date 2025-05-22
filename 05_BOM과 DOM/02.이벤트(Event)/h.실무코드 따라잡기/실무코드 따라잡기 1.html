@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="number" id="inch" />inch
+      <br />
+      <button>계산</button>
+      <p>결과</p>
+      <script>
+         const input = document.querySelector('input')
+         const button = document.querySelector('button')
+         const p = document.querySelector('p')
+
+         button.addEventListener('click', () => {
+            const value = Number(input.value)
+            p.textContent = `계산 결과: ${value * 2.54} cm`
+            if (value == false) {
+               alert('숫자가 아닙니다')
+            }
+         })
+      </script>
+   </body>
+</html>

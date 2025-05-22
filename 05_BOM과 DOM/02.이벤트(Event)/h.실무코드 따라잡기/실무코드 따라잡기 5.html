@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+         button {
+            border-radius: 20px;
+            padding: 5px 10px;
+            margin: 10px;
+            border: none;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>할 일 목록</h1>
+      <input id="todo" /> <button id="add-button">추가하기</button>
+      <div id="todo-list"></div>
+
+      <script>
+         const todo = document.querySelector('#todo')
+         const todoList = document.querySelector('#todo-list')
+         const addButton = document.querySelector('#add-button')
+         let keyCount = 0
+
+         //할 일 추가
+         const addTodo = () => {
+            if (todo.value.trim() === '') {
+               /* 
+                trim -> 양옆의 공백 제거 메서드
+                양쪽 공백을 제거하고 난 뒤 남아 있는 문자값이 없으면 (=공백이면)    
+                */
+               alert('할 일을 입력하세요') // 알림 출력
+               return //함수 종료를 위해 사용
+            }
+            const item = document.createElement('div')
+            const checkbox = document.createElement('input')
+            const text = document.createElement('span')
+            const button = document.createElement('button')
+
+            checkbox.type = 'checkbox' //input 타입 변경
+            // checkbox.setAttribute('type', 'checkbox') 이렇게 쓰는 것도 똑같음~
+            text.textContent = todo.value.trim()
+            button.textContent = '제거하기'
+
+            const key = keyCount //할 일 식별 키
+            keyCount += 1 //할 일을 추가할 때마다 1씩 증가
+
+            item.setAttribute('data-key', key) //식별자 속성 부여
+            item.appendChild(checkbox)
+            item.appendChild(text)
+            item.appendChild(button)
+
+            //item객체와 하위 객체들 생성
+
+            todoList.appendChild(item) // item객체 추가
+
+            //checkbox 클릭시 가운데 취소선 출력/삭제
+            checkbox.addEventListener('change', (e) => {
+               item.style.textDecoration = e.target.checked ? 'line-through' : ''
+               // 삼항연산자! 체크되면 취소선 주고 체크 해제하면 none
+            })
+
+            //제거하기 버튼 클릭시 할일 제거
+            button.addEventListener('click', () => {
+               removeTodo(key)
+            })
+            todo.value = ''
+         }
+
+         //할 일 제거
+         const removeTodo = (key) => {
+            //식별 키(data-key)로 할 일 데이터 제거
+            const item = document.querySelector(`[data-key="${key}"]`)
+            todoList.removeChild(item)
+         }
+
+         //이벤트 연결
+         addButton.addEventListener('click', addTodo)
+
+         //엔터 눌렀을 때 할 일 추가
+         todo.addEventListener('keyup', (e) => {
+            console.log(e.keyCode)
+            const ENTER = 13
+            if (e.keyCode === ENTER) {
+               addTodo()
+            }
+         })
+      </script>
+   </body>
+</html>

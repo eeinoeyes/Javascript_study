@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1></h1>
+      <textarea></textarea>
+      <script>
+         //키보드이벤트에서 아시아 문자 구현 안 되는 오류 해결하는 코드
+
+         const textarea = document.querySelector('textarea')
+         const h1 = document.querySelector('h1')
+         let timerId
+
+         textarea.addEventListener('focus', (e) => {
+            timerId = setInterval(() => {
+               const length = textarea.value.length
+               h1.textContent = `글자 수 : ${length}`
+            }, 50)
+         })
+
+         //포커스 해제시 발생하는 이벤트
+         textarea.addEventListener('blur', (e) => {
+            clearInterval(timerId)
+         })
+      </script>
+   </body>
+</html>
