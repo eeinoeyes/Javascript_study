@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const contact = {
+            familyName: '이',
+            name: '영희',
+            age: 22,
+         }
+
+         // let familyName = contact.familyName
+         // let name = contact.name
+         // let age = contact.age
+         //이렇게 한줄한줄 치면 불편하니까 한번에 처리해버리자~
+
+         let { familyName, name: otherName, age } = contact //=> 이게 비구조화할당
+
+         console.log(familyName)
+         console.log(otherName)
+         console.log(age)
+
+         //배열의 비구조화 할당
+         const arr = ['광희', '지수', '영철', 20]
+         let [value1, value2, value3, value4] = arr // 얘는 중괄호 아니고 대괄호!
+         console.log(value1)
+      </script>
+   </body>
+</html>
