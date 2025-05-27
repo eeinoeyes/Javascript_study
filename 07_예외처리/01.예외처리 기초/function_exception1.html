@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function test() {
+            try {
+               alert('A 위치입니다.')
+               throw '예외 강제 발생'
+               // try문 안에서 throw 사용시 catch로 넘어감
+            } catch (error) {
+               alert('B 위치입니다.')
+               return // 여기서 바로 종료돼서
+            }
+            alert('C 위치입니다.') // 얘는 출력 안 됨
+         }
+
+         test()
+      </script>
+   </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         try {
+            const array = new Array(99999999999999999999999999999999999999) // 배열을 만드는 객체
+            // 공간이 5개인 빈 배열을 생성(length: 5)
+         } catch (error) {
+            console.log(error)
+            console.log('예외이름:', error.name)
+            console.log('예외메세지:', error.message)
+         }
+      </script>
+   </body>
+</html>

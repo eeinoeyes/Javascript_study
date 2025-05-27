@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1></h1>
+      <script>
+         try {
+            const h1 = document.querySelector('h1')
+            h1.textContent = '안녕하세요'
+         } catch {
+            console.log('h1태그를 추출할 수 없습니다.')
+         } finally {
+            console.log('예외발생 여부와 상관없이 무조건 실행됩니다.')
+         }
+
+         console.log('완료!')
+      </script>
+   </body>
+</html>

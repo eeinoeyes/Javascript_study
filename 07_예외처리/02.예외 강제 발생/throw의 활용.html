@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 계좌 출금시 잔고가 없을 경우 예외처리
+
+         let deposit = 10000
+
+         // 계좌에서 인출하는 함수
+         function withdrawa(money) {
+            if (deposit < money) {
+               throw new Error('잔고가 부족합니다.')
+            }
+
+            deposit -= money
+            console.log('deposit:', deposit)
+         }
+         try {
+            withdrawa(5000)
+            withdrawa(5000)
+            withdrawa(5000)
+         } catch (error) {
+            console.log('에러 발생', error.message)
+         }
+      </script>
+   </body>
+</html>
