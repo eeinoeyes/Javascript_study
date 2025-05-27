@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //비동기 사례
+         //  console.log('Hello')
+
+         //  setTimeout(function () {
+         //     console.log('Bye')
+
+         //  }, 3000)
+
+         //  console.log('Hello Agn')
+
+         //비동기를 동기로 바꾸는 법 -> 콜백함수 사용
+         function sayGoodbye(callback) {
+            setTimeout(function () {
+               console.log('bye')
+               callback()
+            }, 3000) // 동기적으로 실행되는 영역
+         }
+
+         console.log('Hello')
+
+         sayGoodbye(function () {
+            console.log('Hello Agn')
+         })
+
+         console.log('한형준') // 동기적인 부분과는 무관하게 비동기로 실행되는 코드
+      </script>
+   </body>
+</html>

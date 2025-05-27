@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function asyncTask() {
+            return new Promise((resolve, reject) => {
+               setTimeout(() => {
+                  console.log('Task done')
+                  // resolve('Task result')
+                  reject('Task reject')
+               }, 1000)
+            })
+         }
+
+         async function runAsyncTasks() {
+            try {
+               // await = async에서만 사용 가능, promise의 then과 같은 역할
+               // await 밑으로 붙은 코드들은 무조건 await단계의 작업이 완료되어야만 순차적으로 실행됨
+               const result1 = await asyncTask()
+               console.log(result1)
+
+               const result2 = result1 + ' next'
+               console.log(result2)
+            } catch (error) {
+               // 여기서 가져오는 error: reject
+               console.log(error)
+            }
+         }
+         runAsyncTasks()
+      </script>
+   </body>
+</html>
