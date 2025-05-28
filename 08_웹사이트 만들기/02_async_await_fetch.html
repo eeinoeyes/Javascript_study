@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // async / await로 외부 데이터 끌어오기
+         const options = {
+            method: 'GET',
+            headers: {
+               accept: 'application/json',
+               Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkOGRjZGJkZTk3Y2IyYmFkNjIyOWE5MDVlY2NiNTI4NSIsIm5iZiI6MTc0ODM5NDAwMi45MTI5OTk5LCJzdWIiOiI2ODM2NjAxMmU0MjkzNzE0ZWFlYjNhNTgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.AGDmi80CScGY3uc5xTJVlS3gJikL1G3R-60bJ__Q1FQ',
+            },
+         }
+
+         const url = 'https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1&region=KR'
+
+         // async function getPlayingMovies(){} 얘를 화살표 함수로도 쓸 수 있다
+         const getPlayingMovies = async (url) => {
+            try {
+               const res = await fetch(url, options)
+
+               const data = await res.json() //fetch가 완료된 후 응답 데이터를 받아 작업
+
+               data.results.forEach((result) => {
+                  // 개별 데이터 추출-핸들링
+                  console.log(result.title)
+                  console.log(result.id)
+                  console.log(result.poster_path)
+                  console.log(result.vote_average)
+                  // 영화 제목, 고유번호, 포스터 이미지 경로, 평점 데이터만 추출
+                  console.log('')
+               })
+            } catch (error) {
+               console.log('에러 발생:', error)
+            }
+         }
+
+         getPlayingMovies(url)
+      </script>
+   </body>
+</html>
