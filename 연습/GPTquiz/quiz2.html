@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function registerUser(name, email, age) {
+            try {
+               // 1. name이 없으면 'no name' 예외 발생
+               if (!name) {
+                  throw new Error('no name')
+               }
+               // 2. email에 @가 없으면 'invalid email' 예외 발생
+               if (email.indexOf('@') === -1) {
+                  throw new Error('invalid email')
+               }
+               // 3. age가 14 미만이면 'too young' 예외 발생
+               if (age < 14) {
+                  throw new Error('too young')
+               }
+               console.log(`${name}님 가입 완료!`)
+            } catch (error) {
+               switch (error.message) {
+                  case 'no name':
+                     // 4. 콘솔에 '이름을 입력하세요.' 출력
+                     console.log('이름을 입력하세요.')
+                     break
+                  case 'invalid email':
+                     // 5. 콘솔에 '이메일 형식이 올바르지 않습니다.' 출력
+                     console.log(`${name}의 이메일 형식이 올바르지 않습니다.`)
+                     break
+                  case 'too young':
+                     console.log('만 14세 미만은 가입 불가합니다.')
+                     break
+                  default:
+                     console.log('알 수 없는 오류')
+               }
+            }
+         }
+
+         registerUser('세연', 'abc@def.com', 18)
+         registerUser('', 'abc@def.com', 20)
+         registerUser('형준', 'abcdef.com', 21)
+         registerUser('규진', 'test@a.com', 12)
+      </script>
+   </body>
+</html>

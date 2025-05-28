@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //회원에게 포인트를 적립/사용할 수 있는 시스템이다. 아래 함수의 빈칸을 채우세요.
+
+         let point = 0 //포인트 잔고
+
+         function earnPoint(amount) {
+            if (amount <= 0) {
+               // 1. 0 이하 금액 적립 시 'invalid amount' 예외 발생
+               throw new Error('invalid amount')
+            }
+            point += amount
+            console.log(`${amount}포인트가 적립되었습니다.`)
+         }
+
+         function usePoint(amount) {
+            try {
+               // 2. 포인트 잔고가 부족하면 'insufficient point' 예외 발생
+               if (point < amount) {
+                  throw new Error('insufficient point')
+               }
+               // 3. 포인트가 0 이하로 입력되면 'invalid amount' 예외 발생
+               if (amount < 0) {
+                  throw new Error('invalid amount')
+               }
+               point -= amount
+               console.log(`${amount}포인트가 사용되었습니다.`)
+            } catch (error) {
+               switch (error.message) {
+                  case 'insufficient point':
+                     // 4. 콘솔에 '포인트가 부족합니다.' 출력
+                     console.log('포인트가 부족합니다.')
+                     break
+                  case 'invalid amount':
+                     // 5. 콘솔에 '유효하지 않은 금액입니다.' 출력
+                     console.log('유효하지 않은 금액입니다.')
+                     break
+                  default:
+                     console.log('알 수 없는 오류')
+               }
+            }
+         }
+
+         earnPoint(1000)
+         usePoint(6000)
+         console.log(`남은 포인트: ${point}`)
+      </script>
+   </body>
+</html>
