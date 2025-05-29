@@ -30,3 +30,94 @@ footer {
 main .container {
    padding: 40px 0;
 }
+
+/* .card 아이템끼리 height 안 맞는 부분 수정 */
+main .container .row .card {
+   height: 100%;
+}
+main .container .row .card a {
+   height: 80%;
+}
+main .container .row .card img {
+   height: 100%;
+   object-fit: cover;
+}
+
+/* detail.html */
+
+main .container .movie-detail > ul.movie-info,
+p {
+   margin-bottom: 10px !important;
+}
+
+main .container ul.movie-info {
+   display: flex;
+}
+
+main .container ul.movie-info li {
+   padding-right: 13px;
+}
+
+.card {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+.card img {
+   height: 100%;
+   object-fit: cover;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+   .col-sm-9 {
+      width: 60%;
+   }
+   .col-sm-3 {
+      width: 40%;
+   }
+
+   main .container ul.movie-info {
+      display: initial;
+   }
+   main .container ul.movie-info li {
+      padding-bottom: 10px;
+   }
+}
+.ellipsis {
+   width: 300px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.program-detail {
+   height: 100%;
+   line-height: 180%;
+}
+.section {
+   padding: 40px 0;
+   line-height: 200%;
+   padding: 30px;
+   margin-top: 20px;
+   background-color: rgb(233, 233, 233);
+}
+
+@media (min-width: 992px) and (max-width: 1399px) {
+   .col-sm-9 {
+      width: 60%;
+   }
+   .col-sm-3 {
+      width: 40%;
+   }
+}
+@media all and (max-width: 991px) {
+   div.row {
+      display: initial;
+      width: 100%;
+   }
+
+   .program-detail {
+      width: 100%;
+      padding-top: 20px;
+   }
+}
